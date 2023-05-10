@@ -37,6 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(top: 20.0),
@@ -230,7 +232,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     ],
                   ),
                   Container(
-                    height: 700,
+                    height: screenHeight * 0.8,
+                    width: screenWidth * 0.8,
                     child: PageView(
                       physics: const NeverScrollableScrollPhysics(),
                       controller: pageController,
@@ -239,127 +242,68 @@ class _MyHomePageState extends State<MyHomePage> {
                           pageChanged = index;
                         });
                       },
-                      children: [
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nFirst Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                      children: const [
+                        // Center(
+                        //   child: Text(
+                        //     "This is\nFirst Page",
+                        //     style: TextStyle(
+                        //         fontSize: 30, fontWeight: FontWeight.bold),
+                        //   ),
+                        // ),
+                        pageContent(
+                          text: "This is\nFirst Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nSecond Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nSecond Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nThird Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nThird Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nFourth Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nFourth Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nFifth Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nFifth Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nSixth Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nSixth Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nSeventh Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nSeventh Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nEight Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nEight Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nNineth Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nNinth Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nTenth Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nTenth Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Container(
-                          height: 200,
-                          color: Colors.white,
-                          child: const Center(
-                            child: Text(
-                              "This is\nEleventh Page",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
-                            ),
-                          ),
+                        pageContent(
+                          text: "This is\nEleventh Page",
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
                       ],
                     ),
@@ -368,6 +312,44 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+  // widget function
+  // Center(
+  //                         child: Text(
+  //                           "This is\nFirst Page",
+  //                           style: TextStyle(
+  //                               fontSize: 30, fontWeight: FontWeight.bold),
+  //                         ),
+  //                       ),
+  // Widget pageText() {
+  //   return
+  // }
+}
+
+class pageContent extends StatelessWidget {
+  const pageContent({
+    Key? key,
+    required this.text,
+    this.fontSize = 30,
+    this.fontWeight = FontWeight.bold,
+  }) : super(key: key);
+
+  final String text;
+  final double fontSize;
+  final FontWeight fontWeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        text,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
         ),
       ),
     );
