@@ -34,6 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PageController pageController = PageController(initialPage: 0);
   int pageChanged = 0;
+  bool isTapped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -71,11 +72,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 1,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        isTapped = true;
+                        print(isTapped);
+                        if (pageChanged > 1) {
+                          pageController.animateToPage(
+                            pageChanged = 1,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -89,11 +94,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 2,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 2) {
+                          pageController.animateToPage(
+                            pageChanged = 2,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
+                        // pageController.animateToPage(
+                        //   pageChanged = 2,
+                        //   duration: const Duration(milliseconds: 10),
+                        //   curve: Curves.bounceInOut,
+                        // );
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -107,11 +119,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 3,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 3) {
+                          pageController.animateToPage(
+                            pageChanged = 3,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
+                        // pageController.animateToPage(
+                        //   pageChanged = 3,
+                        //   duration: const Duration(milliseconds: 10),
+                        //   curve: Curves.bounceInOut,
+                        // );
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -125,11 +144,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 4,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 4) {
+                          pageController.animateToPage(
+                            pageChanged = 4,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -143,11 +164,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 5,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 5) {
+                          pageController.animateToPage(
+                            pageChanged = 5,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -161,11 +184,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 6,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 6) {
+                          pageController.animateToPage(
+                            pageChanged = 6,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -179,11 +204,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 7,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 7) {
+                          pageController.animateToPage(
+                            pageChanged = 7,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -197,11 +224,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 8,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 8) {
+                          pageController.animateToPage(
+                            pageChanged = 8,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -215,11 +244,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 9,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 9) {
+                          pageController.animateToPage(
+                            pageChanged = 9,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
@@ -233,11 +264,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        pageController.animateToPage(
-                          pageChanged = 10,
-                          duration: const Duration(milliseconds: 10),
-                          curve: Curves.bounceInOut,
-                        );
+                        if (pageChanged > 10) {
+                          pageController.animateToPage(
+                            pageChanged = 10,
+                            duration: const Duration(milliseconds: 10),
+                            curve: Curves.bounceInOut,
+                          );
+                        }
                       },
                       child: CircleAvatar(
                         radius: 30,
