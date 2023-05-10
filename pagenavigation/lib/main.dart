@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pagenavigation/page_content.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   PageController pageController = PageController(initialPage: 0);
   int pageChanged = 0;
-  bool _buttonTapped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 0,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: const CircleAvatar(
                         radius: 30,
                         backgroundColor: Colors.green,
@@ -66,8 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     GestureDetector(
                       onTap: () {
                         pageController.animateToPage(
-                          pageChanged = 0,
-                          duration: const Duration(milliseconds: 0),
+                          pageChanged = 1,
+                          duration: const Duration(milliseconds: 10),
                           curve: Curves.bounceInOut,
                         );
                       },
@@ -82,7 +88,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 2,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -94,7 +106,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 3,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -106,7 +124,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 4,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -118,7 +142,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 5,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -130,7 +160,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 6,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -142,7 +178,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 7,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -154,7 +196,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 8,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -166,7 +214,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 9,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -178,7 +232,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        pageController.animateToPage(
+                          pageChanged = 10,
+                          duration: const Duration(milliseconds: 10),
+                          curve: Curves.bounceInOut,
+                        );
+                      },
                       child: CircleAvatar(
                         radius: 30,
                         backgroundColor:
@@ -235,75 +295,83 @@ class _MyHomePageState extends State<MyHomePage> {
                     height: screenHeight * 0.8,
                     width: screenWidth * 0.8,
                     child: PageView(
-                      physics: const NeverScrollableScrollPhysics(),
+                      // physics: const NeverScrollableScrollPhysics(),
                       controller: pageController,
                       onPageChanged: (index) {
                         setState(() {
                           pageChanged = index;
                         });
                       },
-                      children: const [
-                        // Center(
-                        //   child: Text(
-                        //     "This is\nFirst Page",
-                        //     style: TextStyle(
-                        //         fontSize: 30, fontWeight: FontWeight.bold),
-                        //   ),
-                        // ),
-                        pageContent(
+                      children: [
+                        const pageContent(
                           text: "This is\nFirst Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nSecond Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nThird Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nFourth Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nFifth Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nSixth Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nSeventh Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nEight Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nNinth Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
+                        const pageContent(
                           text: "This is\nTenth Page",
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
-                        pageContent(
-                          text: "This is\nEleventh Page",
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            ElevatedButton(
+                              onPressed: () {
+                                pageController.animateToPage(
+                                  pageChanged = 0,
+                                  duration: const Duration(milliseconds: 10),
+                                  curve: Curves.bounceInOut,
+                                );
+                              },
+                              child: const Text("Click Here"),
+                            ),
+                            const Text(
+                              "This is\nEleventh Page",
+                              style: TextStyle(
+                                  fontSize: 30, fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -329,29 +397,52 @@ class _MyHomePageState extends State<MyHomePage> {
   // }
 }
 
-class pageContent extends StatelessWidget {
-  const pageContent({
-    Key? key,
-    required this.text,
-    this.fontSize = 30,
-    this.fontWeight = FontWeight.bold,
-  }) : super(key: key);
+// class pageContent extends StatelessWidget {
+//   const pageContent({
+//     Key? key,
+//     required this.text,
+//     this.fontSize = 30,
+//     this.fontWeight = FontWeight.bold,
+//   }) : super(key: key);
 
-  final String text;
-  final double fontSize;
-  final FontWeight fontWeight;
+//   final String text;
+//   final double fontSize;
+//   final FontWeight fontWeight;
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: fontWeight,
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Text(
+//         text,
+//         textAlign: TextAlign.center,
+//         style: TextStyle(
+//           fontSize: fontSize,
+//           fontWeight: fontWeight,
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// GestureDetector(
+//                       onTap: () {},
+//                       child: const CircleAvatar(
+//                         radius: 30,
+//                         backgroundColor: Colors.green,
+//                         child: Icon(
+//                           Icons.battery_0_bar,
+//                           size: 35,
+//                         ),
+//                       ),
+//                     ),
+
+// class navigationIcon extends StatelessWidget {
+//   const navigationIcon({
+//     Key? key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container();
+//   }
+// }
